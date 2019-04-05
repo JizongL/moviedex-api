@@ -6,7 +6,7 @@ require('dotenv').config()
 const cors = require('cors')
 const helmet = require('helmet')
 const {NODE_ENV}=require('./config')
-const {PORT}=require('./config')
+const PORT = process.env.PORT || 8000
 const MovieData = require('./movies.json')
 const app = express()
 const winston = require('winston')
