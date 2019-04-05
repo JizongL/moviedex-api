@@ -65,7 +65,7 @@ function handleMovieSearch(req,res){
     if(avg_vote>10||avg_vote<0){
       res.status(400).send('average vote must be in range of 0 and 10,decimal is allowed,e.g. 1.5 or 3.5')
     }
-    result=MovieData.filter(movie=>movie.avg_vote >=avg_vote)
+    result=MovieData.filter(movie=>Number(movie.avg_vote) >=avg_vote)
     if(!result){
       res.send('your average vote does not match any movie in the database')
     }
